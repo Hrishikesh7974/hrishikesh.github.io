@@ -1,8 +1,8 @@
 const videos = [
   {
     title: "Demo Video 1",
-    thumb: "https://i.ytimg.com/vi/tgbNymZ7vqY/hqdefault.jpg",
-    url: "https://xhamster43.desi/videos/teacher-and-student-hardcore-fuck-rahul-and-srimoyee-sex-indian-porn-videos-hotmasterxx-xh6EfcA"
+    thumb: "/files/1st.png",
+    url: "/files/1st.mp4"
   },
   {
     title: "Demo Video 2",
