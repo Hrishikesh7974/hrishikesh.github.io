@@ -14,23 +14,7 @@ const videos = [
     thumb: "https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg",
     url: "https://www.youtube.com/embed/ysz5S6PUM-U"
   }
-  {
-    title: "Demo Video 1",
-    thumb: "https://i.ytimg.com/vi/tgbNymZ7vqY/hqdefault.jpg",
-    url: "https://www.youtube.com/embed/tgbNymZ7vqY"
-  },
-  {
-    title: "Demo Video 2",
-    thumb: "https://i.ytimg.com/vi/oUFJJNQGwhk/hqdefault.jpg",
-    url: "https://www.youtube.com/embed/oUFJJNQGwhk"
-  },
-  {
-    title: "Demo Video 3",
-    thumb: "https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg",
-    url: "https://www.youtube.com/embed/ysz5S6PUM-U"
-  }
-
-
+  
 ];
 
 const videoGrid = document.getElementById("videoGrid");
