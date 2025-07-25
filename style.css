@@ -8,69 +8,7 @@
 body {
   background-color: #f9f9f9;
   color: #000;
-}
-
-.flex-div {
-  display: flex;
-  align-items: center;
-}
-
-nav {
-  justify-content: space-between;
-  padding: 10px 20px;
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.menu-icon {
-  width: 24px;
-  margin-right: 20px;
-  cursor: pointer;
-}
-
-.logo {
-  width: 100px;
-  cursor: pointer;
-}
-
-.nav-middle .search-box {
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  border-radius: 25px;
-  margin-right: 15px;
-}
-
-.search-box input {
-  border: none;
-  outline: none;
-  padding: 5px;
-  background: transparent;
-}
-
-.search-box img {
-  width: 20px;
-  cursor: pointer;
-}
-
-.mic-icon {
-  width: 25px;
-  cursor: pointer;
-}
-
-.nav-right img {
-  width: 25px;
-  margin-left: 20px;
-  cursor: pointer;
-}
-
-.user-icon {
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  object-fit: cover;
+  line-height: 1.6;
 }
 
 .container {
@@ -79,8 +17,10 @@ nav {
 
 .banner img {
   width: 100%;
+  max-height: 300px;
+  object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .list-container {
@@ -93,41 +33,46 @@ nav {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  transition: box-shadow 0.3s ease;
+  transition: 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .vid-list:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .thumbnail {
   width: 100%;
-  height: 170px;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.flex-div {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.flex-div img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
   object-fit: cover;
 }
 
-.vid-list .flex-div {
-  padding: 10px;
-  align-items: flex-start;
-}
-
-.vid-list .flex-div img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
 .vid-info a {
+  display: block;
+  font-weight: 600;
   text-decoration: none;
   color: #000;
-  font-weight: 500;
-  display: block;
   margin-bottom: 5px;
 }
 
 .vid-info p {
-  font-size: 0.85em;
+  font-size: 0.85rem;
   color: #606060;
 }
