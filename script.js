@@ -1,7 +1,7 @@
 const videos = [
   {
     title: "step sister Asian hardcore full sex video",
-    thumb: "/files/1st.png",
+    thumb: "/files/1.png",
     url: "/files/1st.mp4"
   },
   {
@@ -11,43 +11,43 @@ const videos = [
   },
   {
     title: "amateur mom fuck me step son",
-    thumb: "https://i.ytimg.com/vi/ysz5S6PUM-U/hqdefault.jpg",
-    url: "https://www.youtube.com/embed/ysz5S6PUM-U"
+    thumb: "/files/3.png",
+    url: "/files/3.mp4"
   },
   {
     title: "step sun fuck their amateur mom in kitchen",
-    thumb: "https://i.ytimg.com/vi/ScMzIvxBSi4/hqdefault.jpg",
-    url: "https://www.youtube.com/embed/ScMzIvxBSi4"
+    thumb: "/files/4.png",
+    url: "/files/4.mp4"
   },
   {
     title: "Asian girl fuck her step brother",
-    thumb: "https://i.ytimg.com/vi/2Vv-BfVoq4g/hqdefault.jpg",
-    url: "https://www.youtube.com/embed/2Vv-BfVoq4g"
+    thumb: "/files/5.png",
+    url: "/files/5.mp4"
   },
   {
     title: "Amateur girl sex with her father",
-    thumb: "https://i.ytimg.com/vi/JGwWNGJdvx8/hqdefault.jpg",
-    url: "https://www.youtube.com/embed/JGwWNGJdvx8"
+    thumb: "/files/6.png",
+    url: "/files/6.mp4"
   },
   {
     title: "asian family full sex video",
-    thumb: "https://i.ytimg.com/vi/3tmd-ClpJxA/hqdefault.jpg",
-    url: "https://www.youtube.com/embed/3tmd-ClpJxA"
+    thumb: "/files/7.png",
+    url: "/files/7.mp4"
   },
   {
     title: "amateur mom sex with their step son in badroom",
-    thumb: "https://i.ytimg.com/vi/kJQP7kiw5Fk/hqdefault.jpg",
-    url: "https://www.youtube.com/embed/kJQP7kiw5Fk"
+    thumb: "/files/8.png",
+    url: "/files/8.mp4"
   },
   {
     title: "asian lesbian sex video",
-    thumb: "https://i.ytimg.com/vi/60ItHLz5WEA/hqdefault.jpg",
-    url: "https://www.youtube.com/embed/60ItHLz5WEA"
+    thumb: "/files/9.png",
+    url: "/files/9.mp4"
   },
   {
     title: "amateur step mother sex with her step asian sister",
-    thumb: "https://i.ytimg.com/vi/hT_nvWreIhg/hqdefault.jpg",
-    url: "https://www.youtube.com/embed/hT_nvWreIhg"
+    thumb: "/files/10.png",
+    url: "/files/10.mp4"
   }
 ];
 
