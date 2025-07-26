@@ -4,17 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hubspot Indian</title>
-  <style>
-    * {
-      margin: 0; padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+  <link href="https://vjs.zencdn.net/8.23.3/video-js.css" rel="stylesheet" />
 
-    body {
-      background: #f9f9f9;
-      color: #222;
-    }
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+
+    body { background: #f9f9f9; color: #222; }
 
     header {
       display: flex;
@@ -31,10 +26,7 @@
       border-radius: 4px;
     }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
+    .logo { font-size: 1.5rem; font-weight: bold; }
 
     .main {
       display: flex;
@@ -59,9 +51,7 @@
       transition: transform 0.2s;
     }
 
-    .video-card:hover {
-      transform: scale(1.02);
-    }
+    .video-card:hover { transform: scale(1.02); }
 
     .video-thumb {
       width: 100%;
@@ -69,9 +59,7 @@
       object-fit: cover;
     }
 
-    .video-info {
-      padding: 0.5rem;
-    }
+    .video-info { padding: 0.5rem; }
 
     .modal {
       position: fixed;
@@ -81,6 +69,7 @@
       display: none;
       justify-content: center;
       align-items: center;
+      z-index: 1000;
     }
 
     .modal-content {
@@ -89,11 +78,6 @@
       padding: 1rem;
       max-width: 800px;
       width: 100%;
-    }
-
-    .modal-content iframe {
-      width: 100%;
-      height: 450px;
     }
 
     .close {
@@ -133,9 +117,7 @@
   </header>
 
   <div class="main">
-    <section class="video-grid" id="videoGrid">
-      <!-- Videos inserted here -->
-    </section>
+    <section class="video-grid" id="videoGrid"></section>
 
     <div class="pagination">
       <button id="prevBtn">Previous</button>
@@ -143,13 +125,29 @@
     </div>
   </div>
 
-  <!-- Modal -->
+  <!-- Modal with Video.js Player -->
   <div class="modal" id="videoModal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <iframe id="videoPlayer" frameborder="0" allowfullscreen></iframe>
+      <video
+        id="videoPlayer"
+        class="video-js vjs-default-skin"
+        controls
+        preload="auto"
+        width="100%"
+        height="450"
+        data-setup="{}"
+      >
+        <source id="videoSource" src="" type="video/mp4" />
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript and consider upgrading your browser
+          <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>.
+        </p>
+      </video>
     </div>
   </div>
+
+  <script src="https://vjs.zencdn.net/8.23.3/video.min.js"></script>
 
   <script>
     const videos = [
@@ -162,17 +160,7 @@
       { title: "demo video 7", thumb: "/files/7.png", url: "7.mp4" },
       { title: "demo video 8", thumb: "/files/8.png", url: "8.mp4" },
       { title: "demo video 9", thumb: "/files/9.png", url: "9.mp4" },
-      { title: "demo video 1", thumb: "/files/1.png", url: "1.mp4" },
-      { title: "demo video 2", thumb: "/files/2.png", url: "2.mp4" },
-      { title: "demo video 3", thumb: "/files/3.png", url: "3.mp4" },
-      { title: "demo video 4", thumb: "/files/4.png", url: "4.mp4" },
-      { title: "demo video 5", thumb: "/files/5.png", url: "5.mp4" },
-      { title: "demo video 6", thumb: "/files/6.png", url: "6.mp4" },
-      { title: "demo video 7", thumb: "/files/7.png", url: "7.mp4" },
-      { title: "demo video 8", thumb: "/files/8.png", url: "8.mp4" },
-      { title: "demo video 9", thumb: "/files/9.png", url: "9.mp4" },
       { title: "demo video 10", thumb: "/files/10.png", url: "10.mp4" },
-      { title: "demo video 9", thumb: "/files/9.png", url: "9.mp4" }
     ];
 
     const videosPerPage = 4;
@@ -181,18 +169,24 @@
 
     const videoGrid = document.getElementById("videoGrid");
     const modal = document.getElementById("videoModal");
-    const player = document.getElementById("videoPlayer");
     const searchBox = document.getElementById("searchBox");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
 
+    const videoElement = document.getElementById('videoPlayer');
+    const videoSource = document.getElementById('videoSource');
+    const player = videojs(videoElement);
+
     function openModal(url) {
-      player.src = url;
+      videoSource.src = url;
+      player.src({ type: "video/mp4", src: url });
+      player.load();
+      player.play();
       modal.style.display = "flex";
     }
 
     function closeModal() {
-      player.src = "";
+      player.pause();
       modal.style.display = "none";
     }
 
@@ -248,11 +242,10 @@
       filteredVideos = videos.filter(video =>
         video.title.toLowerCase().includes(keyword)
       );
-      currentPage = 1; // Reset to first page on search
+      currentPage = 1;
       renderVideos();
     });
 
-    // Initial load
     renderVideos();
   </script>
 </body>
