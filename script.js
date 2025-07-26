@@ -7,7 +7,7 @@ const videos = [
   {
     title: "step father fuck asian daughter",
     thumb: "/files/2.png",
-    url: "https://cdn77-vid-mp4.xnxx-cdn.com/cSoEY81NetOThzAy-24DLw==,1753541345/videos/mp4/c/d/1/xvideos.com_cd1c695af95f1f624f3214b73e6e640d.mp4?ui=MTUuMjM1LjIyMS4xNjEtLS92aWRlby0xMDl3NGw0NS9famF2MXVwX2dyYW5kcA=="
+    url: "https://cdn77-vid-mp4.xnxx-cdn.com/cSoEY81NetOThzAy-24DLw==,1753541345/videos/mp4/c/d/1/xvideos.com_cd1c695af95f1f624f3214b73e6e640d.mp4"
   },
   {
     title: "amateur mom fuck me step son",
@@ -17,37 +17,37 @@ const videos = [
   {
     title: "step sun fuck their amateur mom in kitchen",
     thumb: "/files/4.png",
-    url: "https://cdn77-vid-mp4.xnxx-cdn.com/2jc5DaCeSgER-vZLOZKJwA==,1753538389/videos/mp4/f/7/f/xvideos.com_f7f0fe17a276a7bd5070311e1564d5f3.mp4?ui=MTUuMjM1LjIyMS4xNTktLS92aWRlby0xN2hwZ3o2OS93aWZlX2Z1Y2tlZF9oYQ=="
+    url: "https://cdn77-vid-mp4.xnxx-cdn.com/2jc5DaCeSgER-vZLOZKJwA==,1753538389/videos/mp4/f/7/f/xvideos.com_f7f0fe17a276a7bd5070311e1564d5f3.mp4"
   },
   {
     title: "Asian girl fuck her step brother",
     thumb: "/files/5.png",
-    url: "https://cdn77-vid-mp4.xnxx-cdn.com/_I3lHI0_EWIhvR51BI3SmA==,1753535595/videos/mp4/4/8/0/xvideos.com_4807b002678efc6b160b265e37dacd7b-1.mp4?ui=MTUuMjM1LjIyMS4xNjAtLS92aWRlby15YzN1cDhkL3N0ZXBfYnJvX2dldHNfZg=="
+    url: "https://cdn77-vid-mp4.xnxx-cdn.com/_I3lHI0_EWIhvR51BI3SmA==,1753535595/videos/mp4/4/8/0/xvideos.com_4807b002678efc6b160b265e37dacd7b-1.mp4"
   },
   {
     title: "Amateur girl sex with her father",
     thumb: "/files/6.png",
-    url: "https://cdn77-vid-mp4.xnxx-cdn.com/qmiHWw6lZ1rHxXCLFW5CzA==,1753534472/videos/mp4/c/3/8/xvideos.com_c38894861e43dab84c939f985148c1cd.mp4?ui=MTUuMjM1LjIyMS4xOTgtLS92aWRlby1rMjNvemIxLzE4X3lvX2dpcmxfa2lzcw=="
+    url: "https://cdn77-vid-mp4.xnxx-cdn.com/qmiHWw6lZ1rHxXCLFW5CzA==,1753534472/videos/mp4/c/3/8/xvideos.com_c38894861e43dab84c939f985148c1cd.mp4"
   },
   {
     title: "asian family full sex video",
     thumb: "/files/7.png",
-    url: "https://cdn77-vid-mp4.xnxx-cdn.com/9iGqfzYmpxcjis79pljiUw==,1753541890/videos/mp4/1/1/7/xvideos.com_11759eed6cd6d568c68951033b0a5441.mp4?ui=MTUuMjM1LjIyMS4xNjEtLS92aWRlby0xMzlucnIzOS90cnVlX3Bvd2VyX29mXw=="
+    url: "https://cdn77-vid-mp4.xnxx-cdn.com/9iGqfzYmpxcjis79pljiUw==,1753541890/videos/mp4/1/1/7/xvideos.com_11759eed6cd6d568c68951033b0a5441.mp4"
   },
   {
     title: "amateur mom sex with their step son in badroom",
     thumb: "/files/8.png",
-    url: "https://cdn77-vid-mp4.xnxx-cdn.com/IEgHo-2baYPRv2dYGjcgvg==,1753534241/videos/mp4/b/0/7/xvideos.com_b074f608416a80b0759fe6472f7ddc2a.mp4?ui=MTUuMjM1LjIyMS4xNjEtLS92aWRlby0xY3lvcnAwYi9iaWdfYXNzX3N0ZXBtbw=="
+    url: "https://cdn77-vid-mp4.xnxx-cdn.com/IEgHo-2baYPRv2dYGjcgvg==,1753534241/videos/mp4/b/0/7/xvideos.com_b074f608416a80b0759fe6472f7ddc2a.mp4"
   },
   {
     title: "asian lesbian sex video",
     thumb: "/files/9.png",
-    url: "https://cdn77-vid-mp4.xnxx-cdn.com/gWSvYkwOkUNIo6dV2-YIkQ==,1753541572/videos/mp4/c/8/2/xvideos.com_c829526e29d298e34b973d8db2e05db1.mp4?ui=MTUuMjM1LjIyMS4xNTktLS92aWRlby0xYWZibmgwMi9sdXN0eV9zZXhfZ2FtZQ=="
+    url: "https://cdn77-vid-mp4.xnxx-cdn.com/gWSvYkwOkUNIo6dV2-YIkQ==,1753541572/videos/mp4/c/8/2/xvideos.com_c829526e29d298e34b973d8db2e05db1.mp4"
   },
   {
     title: "amateur step mother sex with her step asian sister",
     thumb: "/files/10.png",
-    url: "https://cdn77-vid-mp4.xnxx-cdn.com/_FMCFT2I7VNJMNGiMATw3A==,1753534325/videos/mp4/8/d/1/xvideos.com_8d1ae7eee5c12a7a91b0e60388e0c442-1.mp4?ui=MTUuMjM1LjIyMS4xNjEtLS92aWRlby13aDdmMTMzL2Z1Y2tpbmdfdGhlX25hdQ=="
+    url: "https://cdn77-vid-mp4.xnxx-cdn.com/_FMCFT2I7VNJMNGiMATw3A==,1753534325/videos/mp4/8/d/1/xvideos.com_8d1ae7eee5c12a7a91b0e60388e0c442-1.mp4"
   }
 ];
 
