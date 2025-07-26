@@ -77,3 +77,6 @@ function closeModal() {
   player.src = "";
   modal.style.display = "none";
 }
+function goToNextPage() {
+  window.location.href = "page2.html"; // Change this if your next page has a different filename
+}
