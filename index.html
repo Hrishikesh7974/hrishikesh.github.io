@@ -5,13 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hubspot Indian</title>
 
-  <!-- Video.js CSS -->
-  <link href="https://vjs.zencdn.net/8.23.3/video-js.css" rel="stylesheet" />
+  <!-- Plyr CSS -->
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-    body { background: #f9f9f9; color: #222; }
+    body {
+      background: #f9f9f9;
+      color: #222;
+    }
 
     header {
       display: flex;
@@ -28,12 +35,39 @@
       border-radius: 4px;
     }
 
-    .logo { font-size: 1.5rem; font-weight: bold; }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
 
     .main {
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    .plyr-container {
+      width: 100%;
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background-color: #cc0000;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
     }
 
     .video-grid {
@@ -53,7 +87,9 @@
       transition: transform 0.2s;
     }
 
-    .video-card:hover { transform: scale(1.02); }
+    .video-card:hover {
+      transform: scale(1.02);
+    }
 
     .video-thumb {
       width: 100%;
@@ -61,7 +97,9 @@
       object-fit: cover;
     }
 
-    .video-info { padding: 0.5rem; }
+    .video-info {
+      padding: 0.5rem;
+    }
 
     .modal {
       position: fixed;
@@ -71,7 +109,6 @@
       display: none;
       justify-content: center;
       align-items: center;
-      z-index: 1000;
     }
 
     .modal-content {
@@ -79,7 +116,12 @@
       background: #fff;
       padding: 1rem;
       max-width: 800px;
-      width: 95%;
+      width: 100%;
+    }
+
+    .modal-content iframe {
+      width: 100%;
+      height: 450px;
     }
 
     .close {
@@ -118,51 +160,74 @@
     <input type="text" placeholder="Search..." id="searchBox" />
   </header>
 
+  <!-- Plyr Player Section -->
+  <div class="plyr-container">
+    <video controls crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="player">
+      <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" type="video/mp4" size="576">
+      <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
+      <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080">
+      <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1440p.mp4" type="video/mp4" size="1440">
+      <track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default>
+      <track kind="captions" label="Français" srclang="fr" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
+      <a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
+    </video>
+
+    <div class="actions">
+      <button class="btn js-play">Play</button>
+      <button class="btn js-pause">Pause</button>
+      <button class="btn js-stop">Stop</button>
+      <button class="btn js-rewind">Rewind</button>
+      <button class="btn js-forward">Forward</button>
+    </div>
+  </div>
+
   <div class="main">
     <section class="video-grid" id="videoGrid"></section>
-
     <div class="pagination">
       <button id="prevBtn">Previous</button>
       <button id="nextBtn">Next</button>
     </div>
   </div>
 
-  <!-- Modal with responsive Video.js Player -->
+  <!-- Modal -->
   <div class="modal" id="videoModal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
-      <video
-        id="videoPlayer"
-        class="video-js vjs-default-skin vjs-fluid"
-        controls
-        preload="auto"
-        poster="MY_VIDEO_POSTER.jpg"
-        data-setup="{}"
-      >
-        <source id="videoSource" src="" type="video/mp4" />
-        <p class="vjs-no-js">
-          To view this video please enable JavaScript and consider upgrading your browser
-          <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>.
-        </p>
-      </video>
+      <iframe id="videoPlayer" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 
-  <!-- Video.js JS -->
-  <script src="https://vjs.zencdn.net/8.23.3/video.min.js"></script>
+  <!-- Plyr JS -->
+  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
 
   <script>
+    const player = new Plyr('#player');
+
+    document.querySelector('.js-play').addEventListener('click', () => player.play());
+    document.querySelector('.js-pause').addEventListener('click', () => player.pause());
+    document.querySelector('.js-stop').addEventListener('click', () => {
+      player.pause();
+      player.currentTime = 0;
+    });
+    document.querySelector('.js-rewind').addEventListener('click', () => {
+      player.currentTime = Math.max(player.currentTime - 10, 0);
+    });
+    document.querySelector('.js-forward').addEventListener('click', () => {
+      player.currentTime = Math.min(player.currentTime + 10, player.duration);
+    });
+
+    // Video List Logic
     const videos = [
-      { title: "step sister Asian hardcore full sex video", thumb: "/files/1.png", url: "https://ip226109515.ahcdn.com/key=+jdXP5tbL3wdI4AaMQOpqQ,s=,end=1753549200,limit=3/data=43.153.85.245-dvp/state=aITZJAlAgau9wgZKqrjk/reftag=0324064223/7/21/3/389278763/025/617/373/1080p.h264.mp4" },
-      { title: "step father fuck asian daughter", thumb: "/files/2.png", url: "https://video-b.xhcdn.com/key=us0o6b15zKh9O9vk15h8kw,end=1753549200,limit=3/data=43.153.85.245-dvp/speed=0/008/596/503/720p.h264.mp4" },
-      { title: "amateur mom fuck me step son", thumb: "/files/3.png", url: "https://video-a.xhcdn.com/key=ZXknLTKepOTmZInoxgu7Vg,end=1753549200,limit=3/data=43.153.85.245-dvp/speed=0/023/130/631/1080p.h264.mp4" },
-      { title: "step sun fuck their amateur mom in kitchen", thumb: "/files/4.png", url: "https://video-b.xhcdn.com/key=JbyrhDGUtm7NgQ-7aDat0Q,end=1753549200,limit=3/data=43.153.85.245-dvp/speed=0/025/780/046/720p.h264.mp4" },
-      { title: "Asian girl fuck her step brother", thumb: "/files/5.png", url: "https://video-a.xhcdn.com/key=c3u1AwV7MK+XEidRFgRyfw,end=1753549200,limit=3/data=43.153.85.245-dvp/speed=0/026/516/803/1080p.h264.mp4" },
-      { title: "Amateur girl sex with her father", thumb: "/files/6.png", url: "https://video-b.xhcdn.com/key=QWUo0KmGeOINjglXxgVT2A,end=1753549200,limit=3/data=43.153.85.245-dvp/speed=0/025/662/950/720p.h264.mp4" },
-      { title: "asian family full sex video", thumb: "/files/7.png", url: "https://video-b.xhcdn.com/key=seI0lfyZaj+9Et8eZHY2Uw,end=1753549200,limit=3/data=43.153.85.245-dvp/speed=0/022/719/495/720p.h264.mp4" },
-      { title: "amateur mom sex with their step son in badroom", thumb: "/files/8.png", url: "https://video-b.xhcdn.com/key=e8qNrPLW5GQsnraSTW+Y3Q,end=1753549200,limit=3/data=43.153.85.245-dvp/speed=0/023/898/857/720p.h264.mp4" },
-      { title: "asian lesbian sex video", thumb: "/files/9.png", url: "https://video-a.xhcdn.com/key=venOi8Q9DjYiBy0TIlPnXQ,end=1753549200,limit=3/data=43.153.85.245-dvp/speed=0/022/899/529/1080p.h264.mp4" },
-      { title: "amateur step mother sex with her step asian sister", thumb: "/files/10.png", url: "https://video-a.xhcdn.com/key=veohaOCRHYzwPHb+ya1w5Q,end=1753549200,limit=3/data=43.153.85.245-dvp/speed=0/022/645/217/1080p.h264.mp4" },
+      { title: "demo video 1", thumb: "/files/1.png", url: "1.mp4" },
+      { title: "demo video 2", thumb: "/files/2.png", url: "2.mp4" },
+      { title: "demo video 3", thumb: "/files/3.png", url: "3.mp4" },
+      { title: "demo video 4", thumb: "/files/4.png", url: "4.mp4" },
+      { title: "demo video 5", thumb: "/files/5.png", url: "5.mp4" },
+      { title: "demo video 6", thumb: "/files/6.png", url: "6.mp4" },
+      { title: "demo video 7", thumb: "/files/7.png", url: "7.mp4" },
+      { title: "demo video 8", thumb: "/files/8.png", url: "8.mp4" },
+      { title: "demo video 9", thumb: "/files/9.png", url: "9.mp4" },
+      { title: "demo video 10", thumb: "/files/10.png", url: "10.mp4" }
     ];
 
     const videosPerPage = 4;
@@ -171,30 +236,18 @@
 
     const videoGrid = document.getElementById("videoGrid");
     const modal = document.getElementById("videoModal");
+    const iframePlayer = document.getElementById("videoPlayer");
     const searchBox = document.getElementById("searchBox");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
 
-    const videoElement = document.getElementById('videoPlayer');
-    const videoSource = document.getElementById('videoSource');
-    const player = videojs(videoElement);
-
     function openModal(url) {
-      // Ignore YouTube links - Video.js does not support them without plugins
-      if (url.includes("youtube.com") || url.includes("youtu.be")) {
-        alert("YouTube videos are not supported in this player.");
-        return;
-      }
-
-      videoSource.src = url;
-      player.src({ type: "video/mp4", src: url });
-      player.load();
-      player.play();
+      iframePlayer.src = url;
       modal.style.display = "flex";
     }
 
     function closeModal() {
-      player.pause();
+      iframePlayer.src = "";
       modal.style.display = "none";
     }
 
